@@ -1,7 +1,9 @@
 import 'dart:convert';
 
-import 'package:chopper_tutorial/data/post_api_service.dart';
+import 'package:chopper_tutorial/common/page_navigation_animation.dart';
+import 'package:chopper_tutorial/data/posts_data/post_api_service.dart';
 import 'package:chopper_tutorial/models/posts_model.dart';
+import 'package:chopper_tutorial/pages/view_comments_page.dart';
 import 'package:chopper_tutorial/pages/view_single_post_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -15,6 +17,15 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Chopper Fetched Data"),
         centerTitle: true,
+        actions: [
+          TextButton(
+            onPressed: () => navigateToNewPage(
+              context,
+              navigateToPage: const ViewCommentsPage(),
+            ),
+            child: const Text("View All Comments"),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
@@ -32,27 +43,6 @@ class HomePage extends StatelessWidget {
       ),
       body: _bodyContent(context),
     );
-  }
-
-  void navigateToSinglePostPage(BuildContext context, {required int postId}) {
-    Navigator.of(context).push(PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) =>
-          ViewSinglePostPage(
-        postId: postId,
-      ),
-      transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        final tween = Tween(begin: const Offset(1, 0), end: Offset.zero)
-            .animate(CurvedAnimation(
-          parent: animation,
-          curve: Curves.decelerate,
-        ));
-
-        return SlideTransition(
-          position: tween,
-          child: child,
-        );
-      },
-    ));
   }
 
   Widget _bodyContent(BuildContext context) {
@@ -92,8 +82,12 @@ class HomePage extends StatelessWidget {
                       ),
                       trailing: IconButton(
                         color: Colors.blue,
-                        onPressed: () => navigateToSinglePostPage(context,
-                            postId: eachPost.id),
+                        onPressed: () => navigateToNewPage(
+                          context,
+                          navigateToPage: ViewSinglePostPage(
+                            postId: eachPost.id,
+                          ),
+                        ),
                         icon: const Icon(
                           Icons.arrow_circle_right_rounded,
                           size: 40,
