@@ -19,7 +19,7 @@ final class _$PostApiService extends PostApiService {
 
   @override
   Future<Response<dynamic>> getPosts() {
-    final Uri $url = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+    final Uri $url = Uri.parse('/posts');
     final Request $request = Request(
       'GET',
       $url,
@@ -30,8 +30,7 @@ final class _$PostApiService extends PostApiService {
 
   @override
   Future<Response<dynamic>> getPost(int id) {
-    final Uri $url =
-        Uri.parse('https://jsonplaceholder.typicode.com/posts/${id}');
+    final Uri $url = Uri.parse('/posts/${id}');
     final Request $request = Request(
       'GET',
       $url,
@@ -42,7 +41,7 @@ final class _$PostApiService extends PostApiService {
 
   @override
   Future<Response<dynamic>> postPost(Map<String, dynamic> body) {
-    final Uri $url = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+    final Uri $url = Uri.parse('/posts');
     final $body = body;
     final Request $request = Request(
       'POST',
