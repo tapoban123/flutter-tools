@@ -1,16 +1,24 @@
-# chopper_tutorial
+# Chopper Package Tutorial
 
-A new Flutter project.
+We are going to use this free api for learning Chopper. [Here](https://jsonplaceholder.typicode.com/)
+<br>
 
-## Getting Started
+## Here's what I learnt:
 
-This project is a starting point for a Flutter application.
+Here's how we can use Headers in our API call:
 
-A few resources to get you started if this is your first Flutter project:
+```dart
+@Get(headers: {"Content-Type": "text/plain",})
+Future<Response> getPosts(@Header('header-name') String headerValue);
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+We put the headers in the annotation when we have unchangeable headers such as Content-Type.
+We can put the headers as our function parameters when we need to change the headers.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To trigger code generation using chopper we need to use the following command:
+
+```bash
+flutter packages pub run build_runner watch/build [DEPRECATED]
+
+dart run build_runner watch --delete-conflicting-outputs
+```
