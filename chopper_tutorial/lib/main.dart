@@ -1,12 +1,20 @@
 import 'package:chopper_tutorial/data/comments_data/comments_api_service.dart';
 import 'package:chopper_tutorial/data/posts_data/post_api_service.dart';
 import 'package:chopper_tutorial/pages/home_page.dart';
-import 'package:chopper_tutorial/pages/view_comments_page.dart';
 import 'package:flutter/material.dart';
+import 'package:logging/logging.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  setUpLogging();
   runApp(const MyApp());
+}
+
+void setUpLogging(){
+  Logger.root.level = Level.ALL;
+  Logger.root.onRecord.listen((record) {
+    debugPrint("${record.level.name}: ${record.time}: ${record.message}");
+  },);
 }
 
 class MyApp extends StatelessWidget {

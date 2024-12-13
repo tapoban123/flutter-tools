@@ -30,7 +30,7 @@ final class _$CommentsApiService extends CommentsApiService {
 
   @override
   Future<Response<dynamic>> getSingleComment(int postId) {
-    final Uri $url = Uri.parse('/comments?postId=${postId}');
+    final Uri $url = Uri.parse('/comments/?postId=${postId}');
     final Request $request = Request(
       'GET',
       $url,

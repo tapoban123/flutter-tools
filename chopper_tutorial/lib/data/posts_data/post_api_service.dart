@@ -1,4 +1,5 @@
 import 'package:chopper/chopper.dart';
+import 'package:chopper_tutorial/interceptors/mobile_data_interceptor.dart';
 
 part 'post_api_service.chopper.dart';
 
@@ -16,6 +17,20 @@ abstract class PostApiService extends ChopperService {
   static PostApiService create() {
     final client = ChopperClient(
       baseUrl: Uri.parse("https://jsonplaceholder.typicode.com"),
+      interceptors: [
+        const HeadersInterceptor({"Cache-Control":"no-cache"}),
+        // HttpLoggingInterceptor(),
+        CurlInterceptor(),
+        
+        // (Request request)async{
+        //   if (request.method == HttpMethod.Post){
+        //     chopperLogger.info("Performed a Post request.");
+        //   }
+
+        //   return request;
+        // }
+        MobileDataIntercepter(),
+      ],
       services: [
         _$PostApiService(),
       ],
@@ -25,3 +40,5 @@ abstract class PostApiService extends ChopperService {
     return _$PostApiService(client);
   }
 }
+
+

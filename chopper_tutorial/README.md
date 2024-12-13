@@ -1,4 +1,5 @@
-# Chopper Package Tutorial
+# Chopper Package Tutorial 
+[Chopper Docs](https://hadrien-lejard.gitbook.io/chopper)
 
 We are going to use this free api for learning Chopper. [Here](https://jsonplaceholder.typicode.com/)
 <br>
