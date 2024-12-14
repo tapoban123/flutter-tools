@@ -19,7 +19,7 @@ We are going to use this free api for learning Chopper. [Here](https://jsonplace
 - ### How to trigger code generation using chopper? 
     We need to use the following command:
 
-    ```bash
+    ```powershell
     flutter packages pub run build_runner watch/build [DEPRECATED]
 
     dart run build_runner watch --delete-conflicting-outputs
