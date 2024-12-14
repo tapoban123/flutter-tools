@@ -7,8 +7,8 @@ abstract class CommentsApiService extends ChopperService {
   @Get()
   Future<Response> getAllComments();
 
-  @Get(path: "?postId={id}")
-  Future<Response> getSingleComment(@Path("id") int postId);
+  @Get()
+  Future<Response> getSingleComment({@Query("postId") required int postId});
 
   static CommentsApiService create() {
     final client = ChopperClient(
