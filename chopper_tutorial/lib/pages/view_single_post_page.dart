@@ -74,7 +74,7 @@ class _ViewSinglePostPageState extends State<ViewSinglePostPage> {
                           flex: 8,
                           child: FutureBuilder(
                             future: Provider.of<CommentsApiService>(context)
-                                .getSingleComment(widget.postId),
+                                .getSingleComment(postId: widget.postId),
                             builder: (context, snapshot) {
                               if (snapshot.connectionState ==
                                   ConnectionState.waiting) {

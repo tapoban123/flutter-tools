@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -13,7 +11,7 @@ abstract class BuiltPost implements Built<BuiltPost, BuiltPostBuilder> {
 
   BuiltPost._();
 
-  factory BuiltPost([updates(BuiltPostBuilder b)]) = _$BuiltPost;
+  factory BuiltPost([Function(BuiltPostBuilder b) updates]) = _$BuiltPost;
 
   static Serializer<BuiltPost> get serializer => _$builtPostSerializer;
 }
