@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "C:\\Users\\rayta\\dev\\flutter\\packages\\flutter_tools\\gradle\\src\\main\\groovy\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\rayta\\AppData\\Local\\Android\\sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "E:\\My Documents\\Flutter\\Flutter Tools\\go_router_tutorial\\android\\app\\.cxx\\Debug\\3812t3k4\\x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\rayta\\AppData\\Local\\Android\\sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "E:\\My Documents\\Flutter\\Flutter Tools\\go_router_tutorial\\android\\app\\.cxx\\Debug\\3812t3k4\\x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}
