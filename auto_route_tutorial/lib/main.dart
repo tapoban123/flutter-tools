@@ -1,5 +1,4 @@
 import 'package:auto_route_tutorial/auto_route.dart';
-import 'package:auto_route_tutorial/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

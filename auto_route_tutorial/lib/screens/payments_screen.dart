@@ -1,4 +1,6 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:auto_route_tutorial/auto_route.gr.dart';
 import 'package:auto_route_tutorial/widgets/home_button.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +18,9 @@ class PaymentsScreen extends StatelessWidget {
           HomeButton(
             backgroundColor: Colors.teal,
             buttonText: "Click",
-            onTap: () {},
+            onTap: () {
+              context.router.push(HomeScreen());
+            },
           ),
         ],
       ),

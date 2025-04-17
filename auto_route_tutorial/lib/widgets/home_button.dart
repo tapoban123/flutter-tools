@@ -15,12 +15,12 @@ class HomeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onTap,
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         backgroundColor: backgroundColor,
       ),
-      child: Text(buttonText),
+      child: Text(buttonText, style: TextStyle(color: Colors.white)),
     );
   }
 }
